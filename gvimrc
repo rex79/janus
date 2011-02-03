@@ -1,32 +1,34 @@
 
-if has("gui_macvim")
-  " Fullscreen takes up entire screen
-  set fuoptions=maxhorz,maxvert
+"if has("gui_macvim")
+  "" Fullscreen takes up entire screen
+  "set fuoptions=maxhorz,maxvert
 
-  " Command-T for CommandT
-  macmenu &File.New\ Tab key=<nop>
-  map <D-t> :CommandT<CR>
+  "" Command-T for CommandT
+  "macmenu &File.New\ Tab key=<nop>
+  "map <D-t> :CommandT<CR>
 
-  " Command-Shift-F for Ack
-  macmenu Window.Toggle\ Full\ Screen\ Mode key=<nop>
-  map <D-F> :Ack<space>
+  "" Command-Shift-F for Ack
+  "macmenu Window.Toggle\ Full\ Screen\ Mode key=<nop>
+  "map <D-F> :Ack<space>
 
-  " Command-e for ConqueTerm
-  map <D-e> :call StartTerm()<CR>
+  "" Command-e for ConqueTerm
+  "map <D-e> :call StartTerm()<CR>
 
-  " Command-/ to toggle comments
-  map <D-/> <plug>NERDCommenterToggle<CR>
+  "" Command-/ to toggle comments
+  "map <D-/> <plug>NERDCommenterToggle<CR>
 
-  " Command-][ to increase/decrease indentation
-  vmap <D-]> >gv
-  vmap <D-[> <gv
-endif
+  "" Command-][ to increase/decrease indentation
+  "vmap <D-]> >gv
+  "vmap <D-[> <gv
+"endif
 
-" Start without the toolbar
-set guioptions-=T
+set guioptions-=T "remove toolbar
+set guioptions-=r " remove right scrollbar
+set guioptions-=m " remove menubar
+
 
 " Default gui color scheme
-color ir_black
+color railscasts 
 
 " ConqueTerm wrapper
 function StartTerm()
