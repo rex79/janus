@@ -5,8 +5,9 @@ set ruler
 syntax on
 runtime macros/matchit.vim        " Load the matchit plugin.
 
-" remap leader from \ to <SPACE>
 let mapleader=","
+" Set encoding
+set encoding=utf-8
 
 set wrap
 set tabstop=2
@@ -70,15 +71,18 @@ endfunction
 
 " make and python use real tabs
 au FileType make                                     set noexpandtab
-au FileType python                                   set noexpandtab
 
-" Thorfile, Rakefile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
+
+" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
 
 " md, markdown, and mk are markdown and define buffer-local preview
 au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
 
 au BufRead,BufNewFile *.txt call s:setupWrapping()
+
+" make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+au FileType python  set tabstop=4 textwidth=79
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -105,6 +109,10 @@ nmap <C-Down> ]e
 " Bubble multiple lines
 vmap <C-Up> [egv
 vmap <C-Down> ]egv
+
+" Enable syntastic syntax checking
+let g:syntastic_enable_signs=1
+let g:syntastic_quiet_warnings=1
 
 " Use modeline overrides
 set modeline
