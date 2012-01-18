@@ -1,10 +1,9 @@
-# A custom fork of Carlhuda's Janus
+# A custom fork of Apeacox Janus
 
 As (g)gvim user, I forked Janus repo to add my own customizations:
 
-* Extradite plugin (https://github.com/int3/vim-extradite): a git commit browser
-* Lusty Explorer (https://github.com/sjbach/lusty): an high speed buffer juggler
-* custom settings in (g)vimrc file(s)
+* Markdown plugin (https://github.com/peterhost/vim-markdown-preview.git): a (customizable) plugin for the vim editor to preview markdown documents.
+
 
 # Janus: Carlhuda's vim Distribution
 
